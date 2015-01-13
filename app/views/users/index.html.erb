@@ -1,0 +1,21 @@
+<h1>Lista de Usuarios</h1>
+
+<table>
+	<tr>
+		<th>Usuario</th>
+		<th>email</th>
+	</tr>
+	
+	<% @usuarios.each do |user|%>
+		<tr>
+			<td><%= link_to user.nombre, user%></td>	
+			<td><%=user.email%></td>
+			<td><%= link_to "Editar", edit_user_path(user)%></td>
+			<td><%= link_to "Eliminar", user, method: :delete, confirm: "Estas seguro?"%></td>
+		</tr>
+	<% end %>
+</table>
+
+<%if @usuarios.size==0 %>
+	Usuarios no encontrados
+<%end %>
