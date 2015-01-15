@@ -1,6 +1,7 @@
 <h1>Lista de Usuarios</h1>
 
-<table>
+<div class="panel panel-default">
+<table class="table">
 	<tr>
 		<th>Usuario</th>
 		<th>email</th>
@@ -16,6 +17,10 @@
 	<% end %>
 </table>
 
+</div>
+
 <%if @usuarios.size==0 %>
 	Usuarios no encontrados
 <%end %>
+
+<%= link_to 'Nuevo Usuario', new_user_path %>
